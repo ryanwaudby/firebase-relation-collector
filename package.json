@@ -1,10 +1,10 @@
 {
-  "name": "your-awesome-modules",
+  "name": "firebase-relation-collector",
   "version": "1.0.0",
-  "description": "all the awesomeness!",
+  "description": "collects all your relationship items in firebase",
   "repository": {
     "type": "git",
-    "url": "https://github.com/..."
+    "url": "https://github.com/ryanwaudby/firebase-relation-fetcher"
   },
   "license": "MIT",
   "options": {
