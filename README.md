@@ -1,11 +1,39 @@
-# npm-base
+# Firebase relation collector
 
-A base package for creating NPM packages with ES2015.
+A npm module that will collect your firebase relationships with ease.
 
-Adapted from [this](https://github.com/kadirahq/npm-base) awesome project.
+## Install
 
-## Basic Usage
+``
+npm install firebase-relation-collector --save
+``
 
-* Simply clone [this](https://github.com/kadirahq/npm-base) project.
-* Change the `package.json` as you want.
-* Then publish to npm via `npm publish`.
+## Basic Usage (ES2015)
+``js
+import { fetch } from 'firebase-relation-collector';
+
+const data = {
+    accounts": {
+        "myaccount": {
+            "items": {
+                "lsjzlt1l8i": true,
+                "oii1aobqms": true
+            }
+        }
+    },
+    "items": {
+        "lsjzlt1l8i": { "id": "child1", "some": "prop" },
+        "oii1aobqms": { "id": "child2" },
+        "ojvdq9uqug": { "id": "child3", "not": "mine" }
+        }
+    }
+}
+
+// You should auth this ref if required
+const ref = new Firebase('your-firebase');
+
+fetch(ref, 'accounts/myaccount/items').then(items => {
+    console.log(items); // [{ "id": "child1", "some": "prop" }, { "id": "child2" }]
+});
+
+```
