@@ -9,11 +9,9 @@ npm install firebase-relation-collector --save
 ``
 
 ## Basic Usage (ES2015)
-``js
-import { fetch } from 'firebase-relation-collector';
-
-const data = {
-    accounts": {
+```js
+{
+    "accounts": {
         "myaccount": {
             "items": {
                 "lsjzlt1l8i": true,
@@ -28,12 +26,16 @@ const data = {
         }
     }
 }
+```
+
+
+```js
+import { fetch } from 'firebase-relation-collector';
 
 // You should auth this ref if required
 const ref = new Firebase('your-firebase');
-
+    
 fetch(ref, 'accounts/myaccount/items').then(items => {
     console.log(items); // [{ "id": "child1", "some": "prop" }, { "id": "child2" }]
 });
-
 ```
