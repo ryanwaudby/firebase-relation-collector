@@ -9,7 +9,6 @@ const startServer = (hostname, data) => new FirebaseServer(5000, hostname, data)
 
 describe('fetch', () => {
   it('collects childs correctly', async () => {
-    const host = 'localhost.firebaseio.com';
     const data = {
       "accounts": {
         "myaccount": {
