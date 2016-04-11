@@ -1,21 +1,22 @@
-import { last, split, keys, map, pick } from 'ramda';
+import { last, split, keys, defaultTo } from 'ramda';
 
-export const fetch = (ref, path) => {
+export const collect = (ref, path, specificKey) => {
   return new Promise(resolve => {
-    const parentRef = ref.child(path);
-    const childId = last(split('/', path));
-    const childRef = ref.child(childId);
+    const defaultLastInPath = defaultTo(last(split('/', path)));
+    const relationPath = defaultLastInPath(specificKey);
 
-    parentRef.once('value', snapshot => {
+    const keysRef = ref.child(path);
+    const relationRef = ref.child(relationPath);
+
+    keysRef.once('value', snapshot => {
       const childKeys = keys(snapshot.val());
-
-      Promise.all(childKeys.map(key => collect(childRef.child(key))))
+      Promise.all(childKeys.map(key => fetch(relationRef.child(key))))
         .then(resolve);
     });
   });
 };
 
-function collect(ref) {
+function fetch(ref) {
   return new Promise(resolve => {
     ref.once('value', snapshot => {
       resolve(snapshot.val());
