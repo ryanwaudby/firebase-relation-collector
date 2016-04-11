@@ -1,5 +1,7 @@
 # Firebase relation collector
 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+
 A npm module that will collect your firebase relationships with ease.
 
 ## Install
@@ -39,3 +41,7 @@ fetch(ref, 'accounts/myaccount/items').then(items => {
     console.log(items); // [{ "id": "child1", "some": "prop" }, { "id": "child2" }]
 });
 ```
+[npm-url]: https://www.npmjs.com/package/firebase-relation-collector
+[npm-image]: https://img.shields.io/npm/v/firebase-relation-collector.svg
+
+[downloads-image]: https://img.shields.io/npm/dm/firebase-relation-collector.svg
