@@ -1,6 +1,6 @@
 {
   "name": "firebase-relation-collector",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "collects all your relationship items in firebase",
   "repository": {
     "type": "git",
