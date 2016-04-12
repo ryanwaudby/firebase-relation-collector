@@ -43,7 +43,7 @@ npm install firebase-relation-collector --save
 
 
 ```js
-import { fetch } from 'firebase-relation-collector';
+import { collect } from 'firebase-relation-collector';
 
 // You should auth this ref if required
 const ref = new Firebase('your-firebase');
