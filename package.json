@@ -29,9 +29,11 @@
     "chai": "3.x.x",
     "eslint": "1.7.x",
     "eslint-plugin-babel": "2.x.x",
+    "faye-websocket": "^0.11.0",
     "firebase-server": "^0.5.4",
     "mocha": "2.x.x",
-    "nodemon": "1.7.x"
+    "nodemon": "1.7.x",
+    "proxyquire": "^1.7.4"
   },
   "dependencies": {
     "babel-runtime": "6.x.x",
